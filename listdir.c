@@ -12,6 +12,7 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <unistd.h>
+#include <string.h>
 
 /* Function for comparing strings by comparing every character */
 int pchar_cmp_same(char* str1, char* str2)
