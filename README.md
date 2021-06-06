@@ -1,2 +1,50 @@
 # linux-common-utils
-Common utilities for linux
+<font size = 8>Common utilities for linux</font>
+<br></br>
+<font size = 9><b>NOTE:</b> Non-root users are not able to use this yet</font>
+
+## Installation
+<p>Download the files</p>
+<p>Open terminal</p>
+<p>Install gcc:</p>
+
+```bash
+sudo apt install gcc
+```
+<p>Change directory to the folder of this</p>
+<p>Do the following:</p>
+
+```bash
+chmod +x install.sh
+./install.sh /bin/gcc
+```
+
+<p>If you want to uninstall it:</p>
+
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+
+## Commands
+<p>To read a file:</p>
+
+```bash
+rfl my_file
+```
+
+<p>To list directory:</p>
+
+```bash
+listdir my_directory
+```
+
+<p>To create a file:</p>
+
+```bash
+crtfl new_file
+```
+
+## Things to be added soon
+<p>Support for non-root users</p>
+<p>More commands</p>
