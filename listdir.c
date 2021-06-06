@@ -51,28 +51,33 @@ char* get_type(char* path)
 
 int main(int argc, char **argv)
 {
-    /* Check if arguments is lower than 2 */
+    char* list_path;
+    /* Check if argument count is lesser than 2 */
     if(argc < 2)
     {
-        printf("\033[31mError:\033[0m Missing Argument 2(Directory name)\n");
-        exit(-1);
+	    list_path = malloc(2 * sizeof(char));
+	    list_path = ".\0";
+    }
+    else
+    {
+	    strcpy(list_path, argv[1]);
     }
     /* Begin reading*/
     struct dirent* ent;
-    DIR* dir = opendir(argv[1]);
+    DIR* dir = opendir(list_path);
     if(dir == NULL) /* if dir is NULL then output error */
     {
         printf("\033[31mError:\033[0m Directory(In Argument 2) does not exists or is not a file\n");
         exit(-1);
     }
-    printf("-- [ Directory \"%s\" ] --\n", realpath(argv[1], NULL));
+    printf("-- [ Directory \"%s\" ] --\n", realpath(list_path, NULL));
     while((ent = readdir(dir)) != NULL)
     {
 	if(pchar_cmp_same(ent->d_name, ".") == 0)
 		if(pchar_cmp_same(ent->d_name, "..") == 0)
 		{
-			char* path_r = (char*)malloc((strlen(ent->d_name) + strlen(realpath(argv[1], NULL)) + 2) * sizeof(char));
-			sprintf(path_r, "%s/%s", realpath(argv[1], NULL), ent->d_name);
+			char* path_r = (char*)malloc((strlen(ent->d_name) + strlen(realpath(list_path, NULL)) + 2) * sizeof(char));
+			sprintf(path_r, "%s/%s", realpath(list_path, NULL), ent->d_name);
 			printf("%s: %s\n", get_type(path_r), ent->d_name);
 		}
     }
