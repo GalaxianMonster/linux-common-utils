@@ -1,8 +1,8 @@
 #!/bin/bash
 
-crtfl_util=/bin/crtfl
-rfl_util=/bin/rfl
-listdir_util=/bin/listdir
+crtfl_util=/usr/bin/crtfl
+rfl_util=/usr/bin/rfl
+listdir_util=/usr/bin/listdir
 
 if test -f "$crtfl_util";
 then

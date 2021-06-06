@@ -9,9 +9,9 @@ fi
 COMPILER=$1
 if test -f "$COMPILER";
 then
-	$COMPILER -o /bin/rfl ./rfl.c
-	$COMPILER -o /bin/listdir ./listdir.c
-	$COMPILER -o /bin/crtfl ./crtfl.c
+	$COMPILER -o /usr/bin/rfl ./rfl.c
+	$COMPILER -o /usr/bin/listdir ./listdir.c
+	$COMPILER -o /usr/bin/crtfl ./crtfl.c
 else
 	printf "\033[31mError:\033[0m Cannot find Compiler \"$COMPILER\"\n"
 fi
