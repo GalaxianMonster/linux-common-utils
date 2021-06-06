@@ -1,7 +1,6 @@
 # linux-common-utils
 <font size = 8>Common utilities for linux</font>
 <br></br>
-<font size = 9><b>NOTE:</b> Non-root users are not able to use this yet</font>
 
 ## Installation
 <p>Download the files</p>
@@ -46,5 +45,4 @@ crtfl new_file
 ```
 
 ## Things to be added soon
-<p>Support for non-root users</p>
 <p>More commands</p>
